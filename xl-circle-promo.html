@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XL Circle Kuota Murah</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .promo-card {
+            max-width: 400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .packages {
+            margin-bottom: 25px;
+        }
+        
+        .package-category {
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-category.new-user {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .package-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .package-category:hover::before {
+            opacity: 1;
+        }
+        
+        .category-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .package-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .package-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .package-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .package-size {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .package-price {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .features {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .features h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .feature-icon.check {
+            background: linear-gradient(45deg, #00b09b, #96c93d);
+            color: white;
+        }
+        
+        .feature-icon.cross {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+        }
+        
+        .note-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .note-title {
+            color: #8b4513;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .note-text {
+            color: #8b4513;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: center;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-circle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-circle:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @media (max-width: 480px) {
+            .promo-card {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .package-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <div class="promo-card">
+        <div class="header">
+            <h1>📦 Ready Kuota XL Circle</h1>
+            <div class="subtitle">Paket Kuota Murah & Berkualitas!</div>
+        </div>
+
+        <div class="packages">
+            <div class="package-category new-user">
+                <div class="category-title">🌟 Khusus Belum Pernah Join Circle</div>
+                <div class="package-list">
+                    <div class="package-item">
+                        <div class="package-size">2GB</div>
+                        <div class="package-price">Rp. 1.000</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">3GB</div>
+                        <div class="package-price">Rp. 2.000</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">4GB</div>
+                        <div class="package-price">Rp. 3.000</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">5GB</div>
+                        <div class="package-price">Rp. 4.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-category">
+                <div class="category-title">🌟 Sudah Pernah Join XL Circle</div>
+                <div class="package-list">
+                    <div class="package-item">
+                        <div class="package-size">1GB</div>
+                        <div class="package-price">Rp. 1.000</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">2GB</div>
+                        <div class="package-price">Rp. 2.000</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">3GB</div>
+                        <div class="package-price">Rp. 3.000</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-size">4GB</div>
+                        <div class="package-price">Rp. 4.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>✨ Keunggulan Paket</h3>
+            <div class="feature-item">
+                <div class="feature-icon check">✓</div>
+                <span>Setelah beli jangan utak-atik circle</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon check">✓</div>
+                <span>Masa aktif kuota 30 hari</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon check">✓</div>
+                <span>Full kuota utama dipakai sendiri</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon check">✓</div>
+                <span>Resmi bergaransi</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon check">✓</div>
+                <span>Khusus XL - semua area</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon check">✓</div>
+                <span>Full 24 jam tanpa pembagian</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon cross">✗</div>
+                <span>Tidak menambah masa aktif kartu</span>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <div class="note-title">📌 Penting!</div>
+            <div class="note-text">
+                Pastikan kartu tidak masa tenggang<br>
+                <strong>Nambah masa aktif kartu 30 hari + 7K</strong>
+            </div>
+        </div>
+
+        <button class="cta-button" onclick="orderNow()">
+            Pesan Sekarang! 🚀
+        </button>
+    </div>
+
+    <script>
+        function orderNow() {
+            // Ganti dengan nomor WhatsApp Anda
+            const whatsappNumber = "6281234567890"; // Ganti dengan nomor WA Anda
+            const message = encodeURIComponent("Halo! Saya tertarik dengan paket kuota XL Circle. Bisa info lebih lanjut?");
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Animasi hover untuk package items
+        document.querySelectorAll('.package-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const size = this.querySelector('.package-size').textContent;
+                const price = this.querySelector('.package-price').textContent;
+                
+                // Efek klik
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-2px)';
+                }, 150);
+                
+                // Optional: Bisa tambahkan fungsi untuk langsung pesan paket tertentu
+                const whatsappNumber = "6281234567890";
+                const message = encodeURIComponent(`Halo! Saya mau pesan paket ${size} dengan harga ${price}. Bisa diproses?`);
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+                setTimeout(() => {
+                    window.open(whatsappURL, '_blank');
+                }, 300);
+            });
+        });
+
+        // Animasi loading saat pertama kali dibuka
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
